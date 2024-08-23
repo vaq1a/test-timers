@@ -48,6 +48,7 @@ export const useTimers = () => {
         requestAnimationsRef.current[id] = requestAnimationFrame((time) => updateTimer(id, time));
       } else {
         cancelAnimationFrame(requestAnimationsRef.current[id]);
+        delete requestAnimationsRef.current[id];
       }
 
       return {
